@@ -1,0 +1,12 @@
+{
+  "name": "tna-gtm-discovery-details",
+  "version": "1.0",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-qunit": "2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^20.0.0"
+  }
+}
