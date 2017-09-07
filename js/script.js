@@ -1,4 +1,7 @@
 'use strict';
 
-console.log('i\'m here, again');
+(function ($) {
+    var $meta = $('meta[name=WT\\.cg_n]').attr('content');
+    console.log($meta);
+})(jQuery);
 //# sourceMappingURL=script.js.map
