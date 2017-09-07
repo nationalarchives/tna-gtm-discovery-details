@@ -1,6 +1,6 @@
 {
   "name": "tna-gtm-discovery-details",
-  "version": "1.0",
+  "version": "1.0.0",
   "devDependencies": {
     "babel-preset-env": "^1.6.0",
     "grunt": "^1.0.1",
