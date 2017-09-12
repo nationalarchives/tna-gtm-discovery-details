@@ -1,14 +1,21 @@
+/**
+ * ------------  THE NATIONAL ARCHIVES  -----------------
+ * by Punal Chotrani
+ * JS - getting the content group in Discovery Details page for Google Tag Manager
+ **/
 jQuery(window).on('load', () => {
 
-    let $dataContent = $('meta[name=WT\\.cg_n]').attr('content'),
-        $metaName = $('meta[name=WT\\.cg_n]').attr('name');
+    let $metaDataContent = $('meta[name=WT\\.cg_n]').attr('content'),
+        $metaDataName = $('meta[name=WT\\.cg_n]').attr('name');
 
-    if ( $metaName === 'WT.cg_n') { $metaName = 'DiscoveryContentGroup'; }
+    if ( $metaDataName === 'WT.cg_n') { $metaDataName = 'DiscoveryContentGroup'; }
 
+    /* Pushing stuff to Google's Data Layer */
     dataLayer.push({
         'event'         : 'Discovery',
         'eventCategory' : 'Details Page',
-        'eventAction'   : $metaName,
-        'eventLabel'    : $dataContent
+        'eventAction'   : $metaDataName,
+        'eventLabel'    : $metaDataContent
     });
+
 });
