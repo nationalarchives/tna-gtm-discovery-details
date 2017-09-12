@@ -1,7 +1,7 @@
 /**
  * ------------  THE NATIONAL ARCHIVES  -----------------
- * by Punal Chotrani
  * JS - getting the content group in Discovery Details page for Google Tag Manager
+ * Developer: Punal Chotrani
  **/
 jQuery(window).on('load', () => {
 
