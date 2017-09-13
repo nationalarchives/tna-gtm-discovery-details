@@ -8,7 +8,8 @@
 jQuery(window).on('load', function () {
 
     var $metaDataContent = $('meta[name=WT\\.cg_n]').attr('content'),
-        $metaDataName = $('meta[name=WT\\.cg_n]').attr('name');
+        $metaDataName = $('meta[name=WT\\.cg_n]').attr('name'),
+        $discovery = 'Discovery';
 
     if ($metaDataName === 'WT.cg_n') {
         $metaDataName = 'DiscoveryContentGroup';
@@ -16,8 +17,8 @@ jQuery(window).on('load', function () {
 
     /* Pushing stuff to Google's Data Layer */
     dataLayer.push({
-        'event': 'Discovery',
-        'eventCategory': 'Details Page',
+        'event': $discovery,
+        'eventCategory': $discovery,
         'eventAction': $metaDataName,
         'eventLabel': $metaDataContent
     });
