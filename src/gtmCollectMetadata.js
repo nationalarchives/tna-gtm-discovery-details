@@ -3,7 +3,7 @@
  * JS - getting the content group in Discovery Details page for Google Tag Manager
  * Developer: Punal Chotrani
  **/
-jQuery(window).on('load', () => {
+$(window).on('load', () => {
 
     let $metaDataContent = $('meta[name=WT\\.cg_n]').attr('content'),
         $metaDataName = $('meta[name=WT\\.cg_n]').attr('name'),
