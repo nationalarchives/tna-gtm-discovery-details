@@ -6,12 +6,16 @@ module.exports = function (grunt) {
         uglify: {
             target: {
                 files: {
-                    'js/script.min.js': 'js/script.js'
+                    'js/gtmCollectMetadata.min.js': 'js/gtmCollectMetadata.js',
+                    'js/gtmDiscoveryDataAttribute.min.js': 'js/gtmDiscoveryDataAttribute.js'
                 }
             }
         },
         eslint: {
-            target: "src/script.js",
+            target: [
+                "src/gtmCollectMetadata.js",
+                "src/gtmDiscoveryDataAttribute.js"
+            ],
             options: {
                 configFile: 'conf/eslint.json'
             }
@@ -22,13 +26,17 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    "js/script.js": "src/script.js"
+                    'js/gtmCollectMetadata.js': 'src/gtmCollectMetadata.js',
+                    'js/gtmDiscoveryDataAttribute.js': 'src/gtmDiscoveryDataAttribute.js'
                 }
             }
         },
         watch: {
             scripts: {
-                files: ['src/script.js'],
+                files: [
+                    'src/gtmCollectMetadata.js',
+                    'src/gtmDiscoveryDataAttribute.js'
+                ],
                 tasks: ['default'],
                 options: {
                     spawn: false

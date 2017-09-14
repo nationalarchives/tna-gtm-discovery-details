@@ -18,5 +18,4 @@ jQuery(window).on('load', () => {
         'eventAction'   : $metaDataName,
         'eventLabel'    : $metaDataContent
     });
-
 });
