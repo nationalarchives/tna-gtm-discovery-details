@@ -15,14 +15,32 @@ $(window).on('load', () => {
         $dscRdata = $('meta[name=DCSext\\.rdata]').attr('content'),
         $dscRepository = $('meta[name=DCSext\\.repository]').attr('content'),
         $ContentGroup = $('meta[name=WT\\.cg_n]').attr('content'),
-        $discovery = 'Discovery',
+        $discovery = 'Discovery';
 
-        $filteredArray = [];
 
         $dataCollection.push($dscDocRef,$dscSearchType,$dscFilterType,$dscColltype,$dscDsource,$dscPlace,$dscRdata,$dscRepository,$ContentGroup);
 
     let filterFunc = $dataCollection.filter($filteredData => $filteredData !== undefined);
 
-    console.log(filterFunc);
+    if (filterFunc.indexOf($ContentGroup) >= 0){
+        dataLayer.push({
+            'ContentGroup' : $ContentGroup
+        });
+        //console.log('1st Hello');
+    }
+    if (filterFunc.indexOf($dscRepository) >= 0){
+        dataLayer.push({
+            'CollType' : 'A2A'
+        });
+        //console.log('Hellooooo M8');
+    }
+    if (filterFunc.indexOf($dscSearchType) >= 0 || filterFunc.indexOf($dscFilterType) >= 0){
+        dataLayer.push({
+            'event' : $discovery,
+            'eventCategory' : $discovery,
+            'eventAction' : $dscFilterType,
+            'eventLabel' : $dscSearchType
+        });
+    }
 
 });
