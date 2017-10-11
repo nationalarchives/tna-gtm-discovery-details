@@ -1,4 +1,6 @@
-'use strict';
+"use strict";
+
+require("babel-polyfill");
 
 /**
  * ------------  THE NATIONAL ARCHIVES  -----------------
@@ -7,43 +9,60 @@
  **/
 $(window).on('load', function () {
 
-    var $dataCollection = [],
-        $dscDocRef = $('meta[name=DCSext\\.docref]').attr('content'),
-        $dscFilterType = $('meta[name=DCSext\\.filtertype]').attr('content'),
-        $dscSearchType = $('meta[name=DCSext\\.searchtype]').attr('content'),
-        $dscColltype = $('meta[name=DCSext\\.colltype]').attr('content'),
-        $dscDsource = $('meta[name=DCSext\\.dsource]').attr('content'),
-        $dscPlace = $('meta[name=DCSext\\.place]').attr('content'),
-        $dscRdata = $('meta[name=DCSext\\.rdata]').attr('content'),
-        $dscRepository = $('meta[name=DCSext\\.repository]').attr('content'),
-        $ContentGroup = $('meta[name=WT\\.cg_n]').attr('content'),
-        $discovery = 'Discovery';
-
-    $dataCollection.push($dscDocRef, $dscSearchType, $dscFilterType, $dscColltype, $dscDsource, $dscPlace, $dscRdata, $dscRepository, $ContentGroup);
-
-    var filterFunc = $dataCollection.filter(function ($filteredData) {
-        return $filteredData !== undefined;
+    /*let $discovery = 'Discovery';
+     let tagContent = [
+        {
+            name: 'ContentGroup',
+            selector: 'meta[name=WT\\.cg_n]',
+        },
+        {
+            name: 'DocRef',
+            selector: 'meta[name=DCSext\\.docref]'
+        },
+        {
+            name: 'CollType',
+            selector: 'meta[name=DCSext\\.colltype]'
+        },
+        {
+            name: 'FilterType',
+            selector: 'meta[name=DCSext\\.filtertype]'
+        },
+        {
+            name: 'SearchType',
+            selector: 'meta[name=DCSext\\.searchtype]'
+        },
+        {
+            name: 'Dsource',
+            selector: 'meta[name=DCSext\\.dsource]'
+        },
+        {
+            name: 'Place',
+            selector: 'meta[name=DCSext\\.place]'
+        },
+        {
+            name: 'Rdata',
+            selector: 'meta[name=DCSext\\.rdata]'
+        },
+        {
+            name: 'Repository',
+            selector: 'meta[name=DCSext\\.repository]'
+        }
+    ];
+     let dummyArray = [];
+     tagContent.forEach((i) => {
+        let $el = $(i.selector);
+        let content = $el.attr('content');
+         if(content !== undefined) {
+            let returnObj = {
+                [i.name]: content
+            };
+            dummyArray.push(returnObj);
+        }
     });
+     console.log(dummyArray);*/
 
-    if (filterFunc.indexOf($ContentGroup) >= 0) {
-        dataLayer.push({
-            'ContentGroup': $ContentGroup
-        });
-        //console.log('1st Hello');
-    }
-    if (filterFunc.indexOf($dscRepository) >= 0) {
-        dataLayer.push({
-            'CollType': 'A2A'
-        });
-        //console.log('Hellooooo M8');
-    }
-    if (filterFunc.indexOf($dscSearchType) >= 0 || filterFunc.indexOf($dscFilterType) >= 0) {
-        dataLayer.push({
-            'event': $discovery,
-            'eventCategory': $discovery,
-            'eventAction': $dscFilterType,
-            'eventLabel': $dscSearchType
-        });
-    }
+    var a = [1, 2, 3];
+    a.includes(2); // true
+    a.includes(4); // false
 });
 //# sourceMappingURL=gtmMultipleDataCollection.js.map
