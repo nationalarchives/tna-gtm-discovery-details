@@ -9,13 +9,17 @@ $(window).on('load', () => {
         $metaDataName = $('meta[name=WT\\.cg_n]').attr('name'),
         $discovery = 'Discovery';
 
-    if ( $metaDataName === 'WT.cg_n') { $metaDataName = 'DiscoveryContentGroup'; }
+    if ( $metaDataName === 'WT.cg_n') {
+        //$metaDataName = 'DiscoveryContentGroup'; (To be used later with other meta tags)
 
-    /* Pushing stuff to Google's Data Layer */
-    dataLayer.push({
-        'event'         : $discovery,
-        'eventCategory' : $discovery,
-        'eventAction'   : $metaDataName,
-        'eventLabel'    : $metaDataContent
-    });
+        /* Pushing stuff to Google's Data Layer */
+        dataLayer.push({
+            // 'event'         : $discovery, (To be used later with other meta tags)
+            // 'eventCategory' : $discovery, (To be used later with other meta tags)
+            // 'eventAction'   : $metaDataName, (To be used later with other meta tags)
+            // 'eventLabel'    : $metaDataContent (To be used later with other meta tags)
+            'ContentGroup' : $metaDataContent
+        });
+    }
+
 });
