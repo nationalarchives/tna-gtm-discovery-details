@@ -13,5 +13,8 @@
     "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^20.0.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
   }
 }

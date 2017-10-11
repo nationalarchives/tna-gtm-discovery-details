@@ -7,14 +7,16 @@ module.exports = function (grunt) {
             target: {
                 files: {
                     'js/gtmCollectMetadata.min.js': 'js/gtmCollectMetadata.js',
-                    'js/gtmDiscoveryDataAttribute.min.js': 'js/gtmDiscoveryDataAttribute.js'
+                    'js/gtmDiscoveryDataAttribute.min.js': 'js/gtmDiscoveryDataAttribute.js',
+                    'js/gtmMultipleDataCollection.min.js': 'js/gtmMultipleDataCollection.js'
                 }
             }
         },
         eslint: {
             target: [
                 "src/gtmCollectMetadata.js",
-                "src/gtmDiscoveryDataAttribute.js"
+                "src/gtmDiscoveryDataAttribute.js",
+                "src/gtmMultipleDataCollection.js"
             ],
             options: {
                 configFile: 'conf/eslint.json'
@@ -27,7 +29,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'js/gtmCollectMetadata.js': 'src/gtmCollectMetadata.js',
-                    'js/gtmDiscoveryDataAttribute.js': 'src/gtmDiscoveryDataAttribute.js'
+                    'js/gtmDiscoveryDataAttribute.js': 'src/gtmDiscoveryDataAttribute.js',
+                    'js/gtmMultipleDataCollection.js': 'src/gtmMultipleDataCollection.js'
                 }
             }
         },
@@ -35,7 +38,8 @@ module.exports = function (grunt) {
             scripts: {
                 files: [
                     'src/gtmCollectMetadata.js',
-                    'src/gtmDiscoveryDataAttribute.js'
+                    'src/gtmDiscoveryDataAttribute.js',
+                    'src/gtmMultipleDataCollection.js'
                 ],
                 tasks: ['default'],
                 options: {
