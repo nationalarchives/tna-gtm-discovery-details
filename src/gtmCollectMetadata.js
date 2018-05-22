@@ -3,23 +3,29 @@
  * JS - getting the content group in Discovery Details page for Google Tag Manager
  * Developer: Punal Chotrani
  **/
-$(window).on('load', () => {
 
-    let $metaDataContent = $('meta[name=WT\\.cg_n]').attr('content'),
-        $metaDataName = $('meta[name=WT\\.cg_n]').attr('name'),
+function gtmLoadEvent(func){
+    let oldOnLoad = window.onload;
+    if (typeof window.onload !== 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function () {
+            oldOnLoad();
+            func();
+        };
+    }
+}
+gtmLoadEvent(function(){
+    let metaTag = document.querySelector('meta[name=WT\\.cg_n]'),
+        $metaDataContent = metaTag.getAttribute("content"),
+        $metaDataName = metaTag.getAttribute('name'),
         $discovery = 'Discovery';
 
     if ( $metaDataName === 'WT.cg_n') {
-        //$metaDataName = 'DiscoveryContentGroup'; (To be used later with other meta tags)
 
-        /* Pushing stuff to Google's Data Layer */
+        /*Pushing stuff to Google's Data Layer*/
         dataLayer.push({
-            // 'event'         : $discovery, (To be used later with other meta tags)
-            // 'eventCategory' : $discovery, (To be used later with other meta tags)
-            // 'eventAction'   : $metaDataName, (To be used later with other meta tags)
-            // 'eventLabel'    : $metaDataContent (To be used later with other meta tags)
             'ContentGroup' : $metaDataContent
         });
     }
-
 });

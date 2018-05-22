@@ -1,4 +1,4 @@
-# Google Tag Manager JavaScript for Discovery detail pages
+# Google Tag Manager JavaScripts
 
 ## Development setup
 
